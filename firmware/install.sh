@@ -10,4 +10,6 @@ sudo dpkg -i firmware-iwlwifi_20170823-1_all.deb
 git clone https://github.com/LibreELEC/iwlwifi-firmware.git
 cd iwlwifi-firmware
 
+sudo cp iwlwifi-8265-34.ucode /lib/firmware/
+
 
