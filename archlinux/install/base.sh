@@ -2,13 +2,13 @@
 fdisk -l
 
 # partition
-cfdisk /dev/sda
+cfdisk /dev/nvme0n1
 
 #format and init swap
-mkfs.ext4 /dev/sda2
-mount /dev/sda2 /mnt
-mkswap /dev/sda1
-swapon /dev/sda1
+mkfs.ext4 /dev/nvme0n1<n>
+mount /dev/nvme0n1 /mnt
+mkswap /dev/nvme0n1
+swapon /dev/nvme0n1
 
 # to configure wifi 
 wifi-menu
@@ -35,8 +35,10 @@ ln -s /usr/share/zoneinfo/US/Pacific /etc/localtime
 echo bluewood > /etc/hostname
 
 # install grub
-pacman -S grub-bios
-grub-install /dev/sda
+pacman -S grub-bios efibootmgr
+mkdir -p /boot/efi
+mount /dev/nvme0n1<n> /boot/efi
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader=arch-linux
 mkinitcpio -p linux
 grup-mkconfig -o /boot/grub/grub.cfg
 
