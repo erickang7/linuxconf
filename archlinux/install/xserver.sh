@@ -8,4 +8,4 @@ pacman -S gdm gnome
 
 systemctl enable gdm
 
-reboot
+sudo reboot

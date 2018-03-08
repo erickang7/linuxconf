@@ -1,0 +1,12 @@
+### BEGIN /etc/grub.d/40_custom ###                                                                     
+# This file provides an easy way to add custom menu entries.  Simply type the                           
+# menu entries you want to add after this comment.  Be careful not to change                            
+# the 'exec tail' line above.                                                                           
+                                                                                                         
+menuentry "Microsoft Windows 10 UEFI-GPT" {                                                             
+    insmod part_gpt                                                                                     
+    insmod fat                                                                                          
+    insmod search_fs_uuid                                                                               
+    search --no-floppy --fs-uuid --set=root C2E0-56C7                                                   
+    chainloader (${root})/EFI/Microsoft/Boot/bootmgfw.efi                                               
+}
