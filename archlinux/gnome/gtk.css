@@ -17,3 +17,17 @@ notebook header button {
   min-width: 0;
   padding: 2px;
 }
+
+/* Decrease the tabs bar height in gnome-terminal
+ * See: https://vdna.be/blog/index.php/2017/01/customizing-the-gnome-terminal-emulator/
+ */
+terminal-window notebook > header.top button {
+    padding: 0 0 0 0;
+    background-image: none;
+    border: 0; }
+terminal-window notebook > header.top > tabs > tab {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;}
+terminal-window notebook > header.top > tabs > tab label {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0; }
