@@ -11,3 +11,4 @@ sudo systemctl start org.cups.cupsd.service
 
 sudo systemctl status org.cups.cupsd
 # sudo systemctl status org.cups.cupsd.socket
+sudo pacman -S system-config-printer
