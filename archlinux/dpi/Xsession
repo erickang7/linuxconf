@@ -1,0 +1,6 @@
+#copy to /etc/gdm/Xsession
+
+if [ -f "$userresources" ]; then
+    #xrdb -nocpp -merge "$userresources"
+    xrdb -merge "$userresources"
+fi
