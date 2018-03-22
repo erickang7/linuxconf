@@ -29,7 +29,7 @@ font pango:monaco 8
 exec xrdb .Xresources
 # rofi startup
 exec rofi 
-
+exec conky
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -51,7 +51,7 @@ bindsym $mod+d exec dmenu_run
 
 # change focus
 bindsym $mod+j focus left
-bindsym $mod+k focus down
+
 #bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
@@ -198,7 +198,7 @@ bindsym $mod+m bar mode toggle
 
 # launch rofi
 bindsym F1 exec rofi -show run
-
+bindsym F2 exec conky
 
 # Volume controls
 #bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
@@ -217,6 +217,8 @@ bindsym $mod+l exec i3lock -e -i ~/Pictures/arch-linux-2560x1440.png
 
 #application behavior
 for_window [class="gimp"] floating enable 
+for_window [urgent=latest] focus
+
 
 #enable touchpad tap to click
 exec --no-startup-id xinput set-prop 13 278 1
