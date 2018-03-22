@@ -182,7 +182,11 @@ mode "$mode_launcher" {
 bar {
         status_command i3status
         font pango:monaco regular 9 
+        position top
 }
+
+bindsym $mod+m bar mode toggle
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
