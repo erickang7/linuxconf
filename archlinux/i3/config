@@ -197,8 +197,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # customer bindsym
-bindsym $mod+l exec i3lock
-
+bindsym $mod+l exec i3lock -i ~/Pictures/arch-linux-2560x1440.png
 
 #enable touchpad tap to click
 exec --no-startup-id xinput set-prop 13 278 1
@@ -206,7 +205,6 @@ exec --no-startup-id xinput set-prop 13 286 1
 
 #setting the background image
 exec --no-startup-id feh --bg-scale ~/Pictures/arch-linux-2560x1440.jpg
+
 #setting up ibus
 exec --no-startup-id ibus-daemon -drx
-
-
