@@ -200,7 +200,7 @@ bindsym $mod+m bar mode toggle
 #bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # launch rofi
-bindsym F1 exec rofi -show run
+bindsym F1 exec rofi -show run -display-run "⌨ > "
 
 # Volume controls
 #bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
