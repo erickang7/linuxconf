@@ -26,10 +26,9 @@ font pango:monaco 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-exec xrdb .Xresources
+exec --no-startup-id xrdb .Xresources
 # rofi startup
-exec rofi 
-exec conky
+exec --no-startup-id rofi 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -41,6 +40,10 @@ bindsym $mod+g exec google-chrome-stable
 
 # kill focused window
 bindsym $mod+q kill
+
+# presenter mode
+bindsym $mod+p exec --no-startup-id /usr/bin/present_mode
+
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -178,7 +181,7 @@ bindsym $mod+r mode "resize"
 
 mode "$mode_launcher" {
     bindsym g exec google-chrome-stable
-    bindsyn t exec thunderbird 
+    bindsym t exec thunderbird 
 }
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -198,7 +201,6 @@ bindsym $mod+m bar mode toggle
 
 # launch rofi
 bindsym F1 exec rofi -show run
-bindsym F2 exec conky
 
 # Volume controls
 #bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
@@ -216,9 +218,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym $mod+l exec i3lock -e -i ~/Pictures/arch-linux-2560x1440.png
 
 #application behavior
-for_window [class="gimp"] floating enable 
 for_window [urgent=latest] focus
-
 
 #enable touchpad tap to click
 exec --no-startup-id xinput set-prop 13 278 1
