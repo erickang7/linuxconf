@@ -253,6 +253,7 @@ for_window [urgent=latest] focus
 #enable touchpad tap to click
 exec --no-startup-id xinput set-prop 13 279 1
 exec --no-startup-id xinput set-prop 13 278 1
+exec --no-startup-id xinput set-prop 13 287 1
 exec --no-startup-id xinput set-prop 13 286 1
 
 #setting the background image
