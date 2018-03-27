@@ -251,10 +251,13 @@ bindsym $mod+l exec i3lock -e -i ~/Pictures/arch-linux-2560x1440.png
 for_window [urgent=latest] focus
 
 #enable touchpad tap to click
-exec --no-startup-id xinput set-prop 13 279 1
-exec --no-startup-id xinput set-prop 13 278 1
-exec --no-startup-id xinput set-prop 13 287 1
-exec --no-startup-id xinput set-prop 13 286 1
+exec --no-startup-id xinput set-prop 'pointer:SynPS/2 Synaptics TouchPad' "libinput Tapping Enabled" 1
+
+#natrual scrolling
+#exec --no-startup-id xinput set-prop 'pointer:SynPS/2 Synaptics TouchPad'
+#"libinput Natural Scrolling Enabled" 1
+
+exec --no-startup-id xinput set-prop 'pointer:SynPS/2 Synaptics TouchPad' "libinput Disable While Typing Enabled" 1
 
 #setting the background image
 exec --no-startup-id feh --bg-scale ~/Pictures/arch-linux-2560x1440.jpg
