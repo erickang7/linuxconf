@@ -1,3 +1,6 @@
+timedatectl set-ntp true
+
+
 # check the disk layout
 fdisk -l
 
@@ -24,7 +27,9 @@ passwd
 #find the right locale and uncomment
 vi /etc/locale.gen 
 
-#locale-gen
+locale-gen
+touch /etc/locale.conf
+echo LANG=en_US.UTF-8 | sudo tee -ai /etc/locale.conf
 
 # set the timezone
 cd /usr/share/zoneinfo/US

@@ -126,3 +126,7 @@ LS_COLORS=$LS_COLORS':or=00'
 LS_COLORS=$LS_COLORS':mi=00'
 export LS_COLORS
 stty -ixon
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
