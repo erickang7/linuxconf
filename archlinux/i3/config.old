@@ -31,7 +31,7 @@ exec --no-startup-id xrdb .Xresources
 exec --no-startup-id rofi 
 
 # gnome-keyring startup
-#exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
 # automount memory card
 exec --no-startup-id udisksctl mount -b /dev/mmcblk0p1
@@ -43,7 +43,7 @@ floating_modifier $mod
 
 
 # suspend lock hibernate reboot 
-set $Locker  i3lock -e -i ~/pictures/arch-linux-2560x1440.png && sleep 1
+set $Locker  i3lock -e -i ~/Pictures/arch-linux-2560x1440.png && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -241,16 +241,11 @@ bindsym XF86AudioRaiseVolume exec amixer set Master 5%+; exec pkill  -RTMIN+10 i
 bindsym XF86AudioLowerVolume exec amixer set Master 5%-; exec pkill  -RTMIN+10 i3blocks
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 1 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 1 # decrease screen brightness
-
-
-floating_minimum_size 75 x 50
-floating_maximum_size 1276 x 800
-
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # customer bindsym
-bindsym $mod+l exec i3lock -e -i ~/pictures/arch-linux-2560x1440.png
+bindsym $mod+l exec i3lock -e -i ~/Pictures/arch-linux-2560x1440.png
 
 #application behavior
 for_window [urgent=latest] focus
@@ -259,12 +254,13 @@ for_window [urgent=latest] focus
 exec --no-startup-id xinput set-prop 'pointer:SynPS/2 Synaptics TouchPad' "libinput Tapping Enabled" 1
 
 #natrual scrolling
-exec --no-startup-id xinput set-prop 'pointer:SynPS/2 Synaptics TouchPad' "libinput Natural Scrolling Enabled" 1
+#exec --no-startup-id xinput set-prop 'pointer:SynPS/2 Synaptics TouchPad'
+#"libinput Natural Scrolling Enabled" 1
 
 exec --no-startup-id xinput set-prop 'pointer:SynPS/2 Synaptics TouchPad' "libinput Disable While Typing Enabled" 1
 
 #setting the background image
-exec --no-startup-id feh --bg-scale ~/pictures/arch-linux-2560x1440.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/arch-linux-2560x1440.jpg
 
 #setting up ibus
 exec --no-startup-id ibus-daemon -drx
